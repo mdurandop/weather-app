@@ -31,17 +31,17 @@ p {
   color: white;
 }
 
-.temperature {
+.temperature-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.temperature img {
+.temperature-box img {
   margin: 2em 0;
   max-width: 100%;
 }
-.temperature .precipitations-min-max {
+.temperature-box .precipitations-min-max {
   display: flex;
   gap: 20px;
 }

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="dist/index.css">
+    <link rel="shortcut icon" href="images/icons/rain.svg" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
         <header>
             <div class="location-city">
                 <img src="images/icons/location.svg" alt="Location icon">
@@ -16,13 +16,13 @@
             </div>
         </header>
         <main>
-            <div class="temperature">
-                <img src="images/weather-imgs/clouds-rainy.png" alt="">
-                <h2>28°</h2>    
+            <div class="temperature-box">
+                <img src="images/weather-imgs/clouds-rainy.png" alt="" class="weather-img">
+                <h2 class="temp">28°</h2>    
                 <p>Precipitations</p>
                 <div class="precipitations-min-max">
-                    <p>Max: 31°</p>
-                    <p>Min: 25°</p>
+                    <p class="max">Max: 31°</p>
+                    <p class="min">Min: 25°</p>
                 </div>
             </div>
             <section>
@@ -31,17 +31,17 @@
                         <img src="images/icons/rain.svg" alt="Rain icon">
                         <p>6%</p>
                     </div>
-                    <div class="rain data-element">
+                    <div class="humidity data-element">
                         <img src="images/icons/humidity.svg" alt="Humidity icon">
                         <p>90%</p>
                     </div>
-                    <div class="rain data-element">
+                    <div class="wind data-element">
                         <img src="images/icons/wind.svg" alt="Wind icon">
                         <p>19 km/h</p>
                     </div>
                 </div>
             </section>
         </main>
-    </div>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
