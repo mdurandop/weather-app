@@ -7,8 +7,6 @@ currentCityText.addEventListener('click', () => {
     document.querySelector('.search-bar').classList.toggle('flex');
 })
 
-
-
 async function getWeatherData(city) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
     var data = await response.json();
@@ -30,16 +28,12 @@ async function getWeatherData(city) {
     const utcTime = new Date().getTime() + new Date().getTimezoneOffset() * 60000;
     const localTime = new Date(utcTime + timezoneOffset * 1000);
 
-    const dayOfWeek = localTime.toLocaleString('es-ES', { weekday: 'long' });
+    const dayOfWeek = localTime.toLocaleString('en-EN', { weekday: 'long' });
     const dayOfMonth = localTime.getDate();
-    const month = localTime.toLocaleString('es-ES', { month: 'long' });
-    const year = localTime.getFullYear();
     const hours = localTime.getHours().toString().padStart(2, '0');
-    const minutes = localTime.getMinutes().toString().padStart(2, '0');
-    const seconds = localTime.getSeconds().toString().padStart(2, '0');
 
-    console.log(`Fecha y hora local en ${city}: ${dayOfWeek}, ${dayOfMonth} de ${month} de ${year}, ${hours}:${minutes}:${seconds}`);
-
+    document.querySelector('.day-week-month').innerText = `${dayOfWeek}, ${dayOfMonth}`
+    console.log(hours + ':00')
 
     // Obtener si es de dia o noche
 
