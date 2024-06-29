@@ -28,5 +28,5 @@ async function getWeatherData(city) {
     
 };
 
-getWeatherData('roma');
+getWeatherData('barranquilla');
 

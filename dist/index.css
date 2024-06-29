@@ -19,7 +19,7 @@ p {
 
 .container {
   margin: 0 auto;
-  width: 400px;
+  width: 300px;
 }
 
 * {
@@ -27,6 +27,14 @@ p {
   margin: 0;
   font-family: "Roboto", system-ui;
   color: white;
+}
+
+.location-city {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
 }
 
 .temperature-box {
@@ -50,7 +58,8 @@ section {
   justify-content: center;
   align-items: center;
 }
-section .data {
+
+.data {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -60,18 +69,49 @@ section .data {
   padding: 12px 0;
   margin: 2em 0;
 }
-section .data .data-element {
+.data .data-element {
   display: flex;
   gap: 10px;
 }
-section .data .data-element p {
+.data .data-element p {
   font-size: 1.2rem;
 }
 
-.location-city {
+.history {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0, 16, 38, 0.3);
+  gap: 0.5em;
+  padding: 1em;
+  border-radius: 20px;
+}
+.history .today {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0.2em;
+}
+.history .four-hours {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.history .four-hours .hour {
+  padding: 10px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin: 20px 0;
+  flex-direction: column;
+  gap: 1em;
+  width: 20%;
+}
+.history .four-hours .hour img {
+  width: 50px;
+  max-width: 60%;
+}
+.history .four-hours .current-hour {
+  background-color: rgba(37, 102, 163, 0.2);
+  border-radius: 10px;
+  border: 1px solid #5096FF;
 }
