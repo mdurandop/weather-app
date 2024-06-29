@@ -1,5 +1,14 @@
 const apiKey = '2256ec8b40943343d53f35da0ecda92b';
 
+const currentCityText = document.querySelector('.location-city');
+
+currentCityText.addEventListener('click', () => {
+    document.querySelector('.arrow').classList.toggle('arrow-rotate');
+    document.querySelector('.search-bar').classList.toggle('flex');
+})
+
+
+
 async function getWeatherData(city) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
     var data = await response.json();
@@ -13,6 +22,26 @@ async function getWeatherData(city) {
     document.querySelector('.wind p').innerHTML = `${(data.wind.speed).toFixed(0)} km/h`;
     document.querySelector('.max').innerHTML = `Max: ${Math.floor(data.main.temp_max)}°`;
     document.querySelector('.min').innerHTML = `Min: ${Math.floor(data.main.temp_min)}°`;
+    document.querySelector('.description').innerText = data.weather[0].description;
+
+    // Obtener la fecha y hora de la ciudad
+    
+    const timezoneOffset = data.timezone; 
+    const utcTime = new Date().getTime() + new Date().getTimezoneOffset() * 60000;
+    const localTime = new Date(utcTime + timezoneOffset * 1000);
+
+    const dayOfWeek = localTime.toLocaleString('es-ES', { weekday: 'long' });
+    const dayOfMonth = localTime.getDate();
+    const month = localTime.toLocaleString('es-ES', { month: 'long' });
+    const year = localTime.getFullYear();
+    const hours = localTime.getHours().toString().padStart(2, '0');
+    const minutes = localTime.getMinutes().toString().padStart(2, '0');
+    const seconds = localTime.getSeconds().toString().padStart(2, '0');
+
+    console.log(`Fecha y hora local en ${city}: ${dayOfWeek}, ${dayOfMonth} de ${month} de ${year}, ${hours}:${minutes}:${seconds}`);
+
+
+    // Obtener si es de dia o noche
 
     const sunrise = data.sys.sunrise;
     const sunset = data.sys.sunset;
@@ -30,3 +59,9 @@ async function getWeatherData(city) {
 
 getWeatherData('barranquilla');
 
+const inputSearchElement = document.querySelector('.search-bar input');
+const searchButton = document.querySelector('.search-bar img');
+
+searchButton.addEventListener('click', () => {
+    getWeatherData(inputSearchElement.value)
+})

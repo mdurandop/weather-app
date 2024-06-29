@@ -31,12 +31,47 @@ p {
   color: white;
 }
 
+*:focus {
+  outline: none;
+}
+
 .location-city {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   margin: 20px 0;
+  cursor: pointer;
+}
+.location-city .arrow {
+  transition: 0.7s;
+}
+
+.arrow-rotate {
+  transform: rotateX(180deg);
+}
+
+.search-bar {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 16, 38, 0.3);
+  border: 1px solid rgba(37, 102, 163, 0.3);
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.7s;
+}
+.search-bar input {
+  background-color: transparent;
+  border: none;
+  width: 85%;
+}
+.search-bar img {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
 }
 
 .temperature-box {
@@ -49,6 +84,12 @@ p {
   margin: 2em 0;
   width: 50%;
   max-width: 100%;
+}
+.temperature-box .description {
+  margin-top: -1em;
+  margin-bottom: 1.2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 0.3em;
 }
 .temperature-box .precipitations-min-max {
   display: flex;

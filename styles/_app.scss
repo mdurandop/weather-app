@@ -4,7 +4,39 @@
     align-items: center;
     gap: 10px;
     margin: 20px 0;
+    cursor: pointer;
+    .arrow {
+        transition: 0.7s;
+    }
 } 
+
+.arrow-rotate {
+    transform: rotateX(180deg);
+}
+
+.search-bar {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba($color: #001026, $alpha: 0.3);
+    border: 1px solid rgba($color: #2566A3, $alpha: 0.3);
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.7s;
+    input {
+        background-color: transparent;
+        border: none;
+        width: 85%;
+
+    }
+    img {
+        cursor: pointer;
+    }
+}
+
+.flex {
+    display: flex;
+}
 
 .temperature-box {
     display: flex;
@@ -16,6 +48,13 @@
         margin: 2em 0;
         width: 50%;
         max-width: 100%;
+    }
+
+    .description {
+        margin-top: -1em;
+        margin-bottom: 1.2em;
+        border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+        padding-bottom: 0.3em;
     }
 
     .precipitations-min-max {
