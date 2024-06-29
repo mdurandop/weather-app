@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;500;700&display=swap');
 
+html, body {
+    min-height: 100%;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    box-sizing: border-box;
-    height: 100dvh;
-    background: linear-gradient(170deg, rgba(41,178,221,1) 0%, rgba(51,170,221,1) 47%, rgba(45,200,234,1) 100%);
+    box-sizing: content-box;
 }
 
 h2 {
